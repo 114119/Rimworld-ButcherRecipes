@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  <RecipeDef Name="jmj_ButcherCorpseFleshBase" Abstract="true">
+    <workerCounterClass>RecipeWorkerCounter_ButcherAnimals</workerCounterClass>
+    <jobString>Butchering.</jobString>
+    <workAmount>450</workAmount>
+    <workSpeedStat>ButcheryFleshSpeed</workSpeedStat>
+    <workSkill>Cooking</workSkill>
+    <efficiencyStat>ButcheryFleshEfficiency</efficiencyStat>
+    <effectWorking>ButcherFlesh</effectWorking>
+    <soundWorking>Recipe_ButcherCorpseFlesh</soundWorking>
+    <interruptIfIngredientIsRotting>true</interruptIfIngredientIsRotting>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Corpses</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <specialProducts>
+      <li>Butchery</li>
+    </specialProducts>
+    <fixedIngredientFilter>
+      <specialFiltersToDisallow>
+        <li>AllowRotten</li>
+      </specialFiltersToDisallow>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <categories>
+        <li>Corpses</li>
+      </categories>
+      <specialFiltersToDisallow>
+        <li>AllowCorpsesColonist</li>
+      </specialFiltersToDisallow>
+    </defaultIngredientFilter>
+   
+  </RecipeDef>
+
+  <RecipeDef ParentName="jmj_ButcherCorpseFleshBase">
+    <defName>jmj_ButcherInsectCorpseFlesh</defName>
+    <label>butcher insect</label>
+    <description>Butcher a insect to obtain its meat, leather, and other body products.</description>
+    <uiIconThing>Meat_Megaspider</uiIconThing>
+    <fixedIngredientFilter>
+      <categories>
+        <li>CorpsesInsect</li>
+      </categories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <RecipeDef ParentName="jmj_ButcherCorpseFleshBase">
+    <defName>jmj_ButcherAnimalCorpseFlesh</defName>
+    <label>butcher animal</label>
+    <description>Butcher an animal to obtain its meat, leather, and other body products.</description>
+    <uiIconThing>Meat_Muffalo</uiIconThing>
+    <fixedIngredientFilter>
+      <categories>
+        <li>CorpsesAnimal</li>
+      </categories>
+      <disallowedCategories>
+        <li>CorpsesInsect</li>
+      </disallowedCategories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <RecipeDef ParentName="jmj_ButcherCorpseFleshBase">
+    <defName>jmj_ButcherHumanlikeCorpseFlesh</defName>
+    <label>butcher human</label>
+    <description>Butcher an human to obtain its meat, leather, and other body products.</description>
+    <uiIconThing>Meat_Human</uiIconThing>
+    <fixedIngredientFilter>
+      <categories>
+        <li>CorpsesHumanlike</li>
+      </categories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+</Defs>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<!-- Adding as patches to put the recipes in sensible order -->
+	<Operation Class="PatchOperationInsert">
+		<xpath>/Defs/ThingDef[defName = "ButcherSpot" or defName = "TableButcher"]/recipes/li[text() = "Make_Kibble"]</xpath>
+		<value>
+			<li>jmj_ButcherHumanlikeCorpseFlesh</li>
+			<li>jmj_ButcherInsectCorpseFlesh</li>
+			<li>jmj_ButcherAnimalCorpseFlesh</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName = "ButcherSpot" or defName = "TableButcher"]/recipes</xpath>
+		<value>
+			<li>jmj_Make_BadMeatKibble</li>
+		</value>
+	</Operation>
+</Patch>

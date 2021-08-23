@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <RecipeDef>
+        <defName>jmj_Make_BadMeatKibble</defName>
+        <label>make kibble from bad meat</label>
+        <description>Make animal kibble by combining raw bad meat and plants.</description>
+        <jobString>Making kibble.</jobString>
+        <workAmount>450</workAmount>
+        <workSpeedStat>CookSpeed</workSpeedStat>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_CookMeal</soundWorking>
+        <allowMixingIngredients>true</allowMixingIngredients>
+        <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Meat_Megaspider</li>
+                        <li>Meat_Human</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+
+            <li>
+                <filter>
+                    <categories>
+                        <li>PlantFoodRaw</li>
+                    </categories>
+                    <thingDefs>
+                        <li>Hay</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <products>
+            <Kibble>50</Kibble>
+        </products>
+        <fixedIngredientFilter>
+            <categories>
+                <li>PlantFoodRaw</li>
+            </categories>
+
+            <thingDefs>
+                <li>Meat_Human</li>
+                <li>Meat_Megaspider</li>
+                <li>Hay</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <defaultIngredientFilter>
+            <thingDefs>
+                <li>Meat_Megaspider</li>
+                <li>Meat_Human</li>
+                <li>Hay</li>
+            </thingDefs>
+        </defaultIngredientFilter>
+        <workSkill>Cooking</workSkill>
+    </RecipeDef>
+</Defs>
