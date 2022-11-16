@@ -9,10 +9,19 @@
 			<li>jmj_ButcherAnimalCorpseFlesh</li>
 		</value>
 	</Operation>
+	
 	<Operation Class="PatchOperationAdd">
 		<xpath>/Defs/ThingDef[defName = "ButcherSpot" or defName = "TableButcher"]/recipes</xpath>
 		<value>
 			<li>jmj_Make_BadMeatKibble</li>
 		</value>
 	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName = "TableButcher"]/recipes</xpath>
+		<value>
+			<li>jmj_Make_Bulk_Kibble</li>
+			<li>jmj_Make_Bulk_BadMeatKibble</li>
+		</value>
+	</Operation>
+	
 </Patch>

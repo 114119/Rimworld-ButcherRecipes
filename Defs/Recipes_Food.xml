@@ -1,6 +1,70 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
     <RecipeDef>
+        <defName>jmj_Make_Bulk_Kibble</defName>
+        <label>make bulk kibble</label>
+        <description>Make bulk animal kibble by combining raw meat and plants.</description>
+        <jobString>Making bulk kibble.</jobString>
+        <workAmount>1800</workAmount>
+        <workSpeedStat>CookSpeed</workSpeedStat>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_CookMeal</soundWorking>
+        <allowMixingIngredients>true</allowMixingIngredients>
+        <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+        <ingredients>
+            <li>
+                <filter>
+                    <customSummary>protein</customSummary>
+                    <categories>
+                        <li>MeatRaw</li>
+                        <li>AnimalProductRaw</li>
+                    </categories>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <customSummary>greens</customSummary>
+                    <categories>
+                        <li>PlantFoodRaw</li>
+                    </categories>
+                    <thingDefs>
+                        <li>Hay</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <products>
+            <Kibble>200</Kibble>
+        </products>
+        <fixedIngredientFilter>
+            <categories>
+                <li>FoodRaw</li>
+            </categories>
+            <thingDefs>
+                <li>Hay</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <defaultIngredientFilter>
+            <categories>
+                <li>Foods</li>
+            </categories>
+            <disallowedCategories>
+                <li>EggsFertilized</li>
+            </disallowedCategories>
+            <disallowedThingDefs>
+                <li>InsectJelly</li>
+            </disallowedThingDefs>
+        </defaultIngredientFilter>
+        <workSkill>Cooking</workSkill>
+    </RecipeDef>
+
+
+
+
+
+    <RecipeDef>
         <defName>jmj_Make_BadMeatKibble</defName>
         <label>make kibble from bad meat</label>
         <description>Make animal kibble by combining raw bad meat and plants.</description>
@@ -41,7 +105,62 @@
             <categories>
                 <li>PlantFoodRaw</li>
             </categories>
+            <thingDefs>
+                <li>Meat_Human</li>
+                <li>Meat_Megaspider</li>
+                <li>Hay</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <defaultIngredientFilter>
+            <thingDefs>
+                <li>Meat_Megaspider</li>
+                <li>Meat_Human</li>
+                <li>Hay</li>
+            </thingDefs>
+        </defaultIngredientFilter>
+        <workSkill>Cooking</workSkill>
+    </RecipeDef>
+    <RecipeDef>
+        <defName>jmj_Make_Bulk_BadMeatKibble</defName>
+        <label>make bulk kibble from bad meat</label>
+        <description>Make bulk animal kibble by combining raw bad meat and plants.</description>
+        <jobString>Making kibble.</jobString>
+        <workAmount>1800</workAmount>
+        <workSpeedStat>CookSpeed</workSpeedStat>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_CookMeal</soundWorking>
+        <allowMixingIngredients>true</allowMixingIngredients>
+        <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Meat_Megaspider</li>
+                        <li>Meat_Human</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
 
+            <li>
+                <filter>
+                    <categories>
+                        <li>PlantFoodRaw</li>
+                    </categories>
+                    <thingDefs>
+                        <li>Hay</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <products>
+            <Kibble>200</Kibble>
+        </products>
+        <fixedIngredientFilter>
+            <categories>
+                <li>PlantFoodRaw</li>
+            </categories>
             <thingDefs>
                 <li>Meat_Human</li>
                 <li>Meat_Megaspider</li>
